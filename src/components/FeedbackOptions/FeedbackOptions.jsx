@@ -1,16 +1,22 @@
 import '../FeedbackOptions/FeedbackOptions.styled.css';
 
-export const FeedbackOptions = ({ onIncrement }) => {
-  return  (
+export const FeedbackOptions = ({ options, onIncrement }) => {
+  const { good, neutral, bad } = options;
+  return (
     <>
       <div className="Controls">
-        <button type="button" onClick={onIncrement}>
+        <button name="good" value={good} type="button" onClick={onIncrement}>
           Good
         </button>
-        <button type="button" onClick={onIncrement}>
+        <button
+          name="neutral"
+          value={neutral}
+          type="button"
+          onClick={onIncrement}
+        >
           Neutral
         </button>
-        <button type="button" onClick={onIncrement}>
+        <button name="bad" value={bad} type="button" onClick={onIncrement}>
           Bad
         </button>
       </div>
